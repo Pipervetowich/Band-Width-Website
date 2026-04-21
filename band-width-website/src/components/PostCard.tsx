@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Post, CategoryColor } from "../types";
-import styles from "./PostCard.module.css";
+import styles from "./Postcard.module.css";
 
 interface Props {
   post: Post;
