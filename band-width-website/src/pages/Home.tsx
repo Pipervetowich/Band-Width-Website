@@ -66,7 +66,6 @@ export default function Home() {
         {/* ── VIDEO PANEL ─────────────────────── */}
         <div className={styles.videoPanel}>
           <video className={styles.videoFrame} autoPlay muted loop playsInline>
-            {/* Convert App_Video.MOV to .mp4 first — .mov won't play in Chrome/Firefox */}
             <source src="/App_Video.mp4" type="video/mp4" />
           </video>
           <div className={styles.videoOverlay} />
@@ -90,14 +89,6 @@ export default function Home() {
             documents how we built it from the first wireframe to a working
             mobile app.
           </p>
-
-          <div className={styles.heroMode}>
-            {["Fan", "Band", "Host"].map((m) => (
-              <span key={m} className={styles.modeChip}>
-                {m}
-              </span>
-            ))}
-          </div>
 
           <div className={styles.heroNumbers}>
             <div>
