@@ -35,7 +35,7 @@ const team = [
     color: "#7B23CF",
     gradient: "linear-gradient(160deg, #1a0a2e 0%, #2d1050 100%)",
     accent: "#7B23CF",
-    bio: "Led Figma prototyping, user research, and all front-end screens.",
+    bio: "Designed Figma prototype, user research, and all front-end screens.",
     photo: "/Piper.jpg",
   },
   {
@@ -49,11 +49,11 @@ const team = [
   },
   {
     name: "Emme",
-    role: "Branding & Identity",
+    role: "UX/UI, Branding & Identity",
     color: "#85C584",
     gradient: "linear-gradient(160deg, #0a1a0e 0%, #122614 100%)",
     accent: "#85C584",
-    bio: "Defined the visual language, color system, logo, and brand aesthetic.",
+    bio: "Designed Figma prototypes and defined the visual language, color system, logo, and brand aesthetic.",
     photo: "/Emme.jpg",
   },
 ];
