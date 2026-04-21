@@ -36,7 +36,7 @@ const team = [
     gradient: "linear-gradient(160deg, #1a0a2e 0%, #2d1050 100%)",
     accent: "#7B23CF",
     bio: "Led Figma prototyping, user research, and all front-end screens.",
-    photo: "../public/Piper.jpg",
+    photo: "/Piper.jpg",
   },
   {
     name: "Shane Wierl",
@@ -45,7 +45,7 @@ const team = [
     gradient: "linear-gradient(160deg, #0a1520 0%, #0d2840 100%)",
     accent: "#3ABEFF",
     bio: "Built the entire backend: database, API routes, auth, and real-time features.",
-    photo: "../public/Shane.jpg",
+    photo: "/Shane.jpg",
   },
   {
     name: "Emme",
@@ -54,7 +54,7 @@ const team = [
     gradient: "linear-gradient(160deg, #0a1a0e 0%, #122614 100%)",
     accent: "#85C584",
     bio: "Defined the visual language, color system, logo, and brand aesthetic.",
-    photo: "../public/Emme.jpg",
+    photo: "/Emme.jpg",
   },
 ];
 
@@ -65,43 +65,10 @@ export default function Home() {
       <section className={styles.hero}>
         {/* ── VIDEO PANEL ─────────────────────── */}
         <div className={styles.videoPanel}>
-          {/*
-            TO ADD YOUR VIDEO:
-            Option A — YouTube embed:
-              Replace the div.videoPlaceholder with:
-              <iframe
-                className={styles.videoFrame}
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=YOUR_VIDEO_ID&controls=0"
-                allow="autoplay; fullscreen"
-                allowFullScreen
-              />
-
-            Option B — local/hosted mp4:
-              <video className={styles.videoFrame} autoPlay muted loop playsInline>
-                <source src="/videos/bandwidth-demo.mp4" type="video/mp4" />
-              </video>
-          */}
-          <div className={styles.videoPlaceholder}>
-            <div className={styles.videoIcon}>
-              <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-                <circle
-                  cx="26"
-                  cy="26"
-                  r="25"
-                  stroke="rgba(255,255,255,0.15)"
-                  strokeWidth="1.5"
-                />
-                <polygon
-                  points="21,17 39,26 21,35"
-                  fill="rgba(255,255,255,0.7)"
-                />
-              </svg>
-            </div>
-            <p className={styles.videoLabel}>App Demo Video</p>
-            <p className={styles.videoHint}>
-              Drop a YouTube embed or mp4 src here
-            </p>
-          </div>
+          <video className={styles.videoFrame} autoPlay muted loop playsInline>
+            {/* Convert App_Video.MOV to .mp4 first — .mov won't play in Chrome/Firefox */}
+            <source src="/App_Video.mp4" type="video/mp4" />
+          </video>
           <div className={styles.videoOverlay} />
         </div>
 
@@ -214,7 +181,7 @@ export default function Home() {
           <div className={styles.teamCards}>
             {team.map((m) => (
               <div key={m.name} className={styles.memberCard}>
-                {/* Photo area */}
+                {/* Photo */}
                 <div
                   className={styles.memberPhoto}
                   style={{ background: m.gradient }}
@@ -227,10 +194,6 @@ export default function Home() {
                     />
                   ) : (
                     <div className={styles.memberPhotoPlaceholder}>
-                      {/*
-                        Replace with:
-                        <img src="/images/piper.jpg" alt="Piper Vetowich" className={styles.memberImg} />
-                      */}
                       <div
                         className={styles.memberInitial}
                         style={{ color: m.accent }}

@@ -1,7 +1,21 @@
 import { useState } from "react";
 import styles from "./Process.module.css";
 
-const iterations = [
+type IterImage = { label: string; src: string };
+type Iteration = {
+  id: string;
+  phase: string;
+  tag: string;
+  color: string;
+  title: string;
+  summary: string;
+  who: string[];
+  wins: string[];
+  learnings: string[];
+  images: IterImage[];
+};
+
+const iterations: Iteration[] = [
   {
     id: "week0",
     phase: "Week 0",
@@ -26,10 +40,10 @@ const iterations = [
       "Easy to get ahead of yourself with features not needed yet",
     ],
     images: [
-      { label: "Home Screen v1 — Carousel", placeholder: true },
-      { label: "Home Screen v2 — Scroll View", placeholder: true },
-      { label: "Show Page Wireframe", placeholder: true },
-      { label: "Profile & Settings Wireframe", placeholder: true },
+      { label: "Home Screen v1 — Carousel", src: "/Low_Home.jpg" },
+      { label: "Home Screen v2 — Scroll View", src: "/Low_Home_Scroll.jpg" },
+      { label: "Show Page Wireframe", src: "/Wireframe_Show.jpg" },
+      { label: "Profile & Settings Wireframe", src: "/Wireframe_Profile.jpg" },
     ],
   },
   {
@@ -57,10 +71,8 @@ const iterations = [
       "Shane found and fixed the Expo HTTPS/CORS problem that unblocked everyone",
     ],
     images: [
-      { label: "A/B Test — Home Screen Options", placeholder: true },
-      { label: "A/B Test — Show Page Options", placeholder: true },
-      { label: "Discover Page Wireframes", placeholder: true },
-      { label: "Logo Survey Results", placeholder: true },
+      { label: "A/B Test — Show Page Options", src: "/AB_Test.jpg" },
+      { label: "Discover Page Wireframes", src: "/Wireframe_Discover.jpg" },
     ],
   },
   {
@@ -89,10 +101,9 @@ const iterations = [
       "Mentor suggested React Query for better data handling",
     ],
     images: [
-      { label: "Database Schema Diagram", placeholder: true },
-      { label: "Mid-Fidelity Home Screen", placeholder: true },
-      { label: "Mid-Fidelity Show Page", placeholder: true },
-      { label: "Mid-Fidelity Fan Profile", placeholder: true },
+      { label: "Mid-Fidelity Home Screen", src: "/Mid_Home.jpg" },
+      { label: "Mid-Fidelity Show Page", src: "/Mid_Show.jpg" },
+      { label: "Mid-Fidelity Fan Profile", src: "/Mid_Fan.jpg" },
     ],
   },
   {
@@ -121,10 +132,8 @@ const iterations = [
       "Feedback: notifications felt out of place on home screen",
     ],
     images: [
-      { label: "Affinity Map from Survey Responses", placeholder: true },
-      { label: "Home Screen — My Artists Carousel", placeholder: true },
-      { label: "Home Screen — Upcoming Events", placeholder: true },
-      { label: "Show Posting Form", placeholder: true },
+      { label: "Affinity Map from Survey Responses", src: "/Affinity_Map.jpg" },
+      { label: "Show Posting Form", src: "/Mid_Post.jpg" },
     ],
   },
   {
@@ -134,7 +143,7 @@ const iterations = [
     color: "green",
     title: "SHOWS,\nDISCOVER,\nNOTIFY.",
     summary:
-      "Shane shipped the Shows manager, show co-ownership, and auto-inherited genre tags. Piper built the notification center — moving notifications off the home screen into a dedicated bell-icon update center with 6 trigger types.",
+      "Shane shipped the Shows manager, show co-ownership, and auto-inherited genre tags. Piper built the notification center, moving notifications off the home screen into a dedicated bell-icon update center with 6 trigger types.",
     who: [
       "Piper: Notification center, home screen polish, Discover tag fixes",
       "Shane: Shows manager page, edit/delete flows, Discover search, image picker, show inheritance",
@@ -154,10 +163,9 @@ const iterations = [
       "Mock data had to match real backend schema exactly",
     ],
     images: [
-      { label: "Shows Manager Page", placeholder: true },
-      { label: "New Show Creation Form", placeholder: true },
-      { label: "Notification Center — Today View", placeholder: true },
-      { label: "Notification Center — Read/Unread States", placeholder: true },
+      { label: "Shows Manager Page", src: "/High_Show.jpg" },
+      { label: "New Show Creation Form", src: "/High_Edit_Show.jpg" },
+      { label: "Notification Center", src: "/High_Notification.jpg" },
     ],
   },
   {
@@ -187,10 +195,10 @@ const iterations = [
       "Core lesson: consistency across screens matters more than clever one-off design",
     ],
     images: [
-      { label: "Discover Screen — Updated Filters", placeholder: true },
-      { label: "Looking For Board", placeholder: true },
-      { label: "Band Profile Page", placeholder: true },
-      { label: "Host/Venue Profile Page", placeholder: true },
+      { label: "Discover Screen — Updated Filters", src: "/Filters.jpg" },
+      { label: "Looking For Board", src: "/High_Looking_For.jpg" },
+      { label: "Band Profile Page", src: "/Band.jpg" },
+      { label: "Host/Venue Profile Page", src: "/Venue.jpg" },
     ],
   },
   {
@@ -219,12 +227,7 @@ const iterations = [
       "People love the app but want design, always a later-phase concern",
       "Pitching the app at real shows to grow awareness",
     ],
-    images: [
-      { label: "Show Detail — Final Layout", placeholder: true },
-      { label: "Discover Screen — Final", placeholder: true },
-      { label: "Looking For — Final", placeholder: true },
-      { label: "Logo Exploration Directions", placeholder: true },
-    ],
+    images: [],
   },
 ];
 
@@ -269,7 +272,6 @@ export default function Process() {
           </div>
         </div>
 
-        {/* Phase nav */}
         <div className={styles.phaseNav}>
           {iterations.map((it) => (
             <a key={it.id} href={`#${it.id}`} className={styles.phaseNavItem}>
@@ -286,7 +288,7 @@ export default function Process() {
       {iterations.map((it, idx) => (
         <section key={it.id} id={it.id} className={styles.iter}>
           <div className={styles.iterInner}>
-            {/* Header row */}
+            {/* Header */}
             <div className={styles.iterHeader}>
               <div className={styles.iterMeta}>
                 <span className={styles.iterPhase}>{it.phase}</span>
@@ -300,50 +302,40 @@ export default function Process() {
               <p className={styles.iterSummary}>{it.summary}</p>
             </div>
 
-            {/* ── IMAGE GRID ────────────────────── */}
-            <div className={styles.imgGrid}>
-              {it.images.map((img, i) => (
-                <div
-                  key={i}
-                  className={styles.imgSlot}
-                  onClick={() => setActiveImg({ iter: it.id, idx: i })}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) =>
-                    e.key === "Enter" && setActiveImg({ iter: it.id, idx: i })
-                  }
-                >
+            {/* ── IMAGE GRID — only render if images exist ── */}
+            {it.images.length > 0 && (
+              <div
+                className={styles.imgGrid}
+                style={
+                  { "--img-count": it.images.length } as React.CSSProperties
+                }
+              >
+                {it.images.map((img, i) => (
                   <div
-                    className={styles.imgPlaceholder}
-                    style={{ borderColor: `var(--${it.color})` }}
+                    key={i}
+                    className={styles.imgSlot}
+                    onClick={() => setActiveImg({ iter: it.id, idx: i })}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) =>
+                      e.key === "Enter" && setActiveImg({ iter: it.id, idx: i })
+                    }
                   >
-                    <div
-                      className={styles.imgIcon}
-                      style={{ color: `var(--${it.color})` }}
-                    >
-                      <svg
-                        width="28"
-                        height="28"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                      >
-                        <rect x="3" y="3" width="18" height="18" rx="2" />
-                        <circle cx="8.5" cy="8.5" r="1.5" />
-                        <polyline points="21 15 16 10 5 21" />
-                      </svg>
+                    <div className={styles.imgFilled}>
+                      <img
+                        src={img.src}
+                        alt={img.label}
+                        className={styles.imgFill}
+                      />
+                      <p className={styles.imgCaption}>{img.label}</p>
                     </div>
-                    <p className={styles.imgLabel}>{img.label}</p>
-                    <p className={styles.imgHint}>Click to add image</p>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
 
             {/* ── DETAIL COLUMNS ─────────────────── */}
             <div className={styles.detailGrid}>
-              {/* Who did what */}
               <div className={styles.detailCol}>
                 <p className={styles.detailLabel}>Who did what</p>
                 <ul className={styles.detailList}>
@@ -358,8 +350,6 @@ export default function Process() {
                   ))}
                 </ul>
               </div>
-
-              {/* Wins */}
               <div className={styles.detailCol}>
                 <p className={styles.detailLabel}>What shipped</p>
                 <ul className={styles.detailList}>
@@ -374,8 +364,6 @@ export default function Process() {
                   ))}
                 </ul>
               </div>
-
-              {/* Learnings */}
               <div className={styles.detailCol}>
                 <p className={styles.detailLabel}>What we learned</p>
                 <ul className={styles.detailList}>
@@ -383,7 +371,7 @@ export default function Process() {
                     <li key={i} className={styles.detailItem}>
                       <span
                         className={styles.detailBullet}
-                        style={{ background: "rgba(255,255,255,0.3)" }}
+                        style={{ background: "rgba(255,255,255,0.5)" }}
                       />
                       {l}
                     </li>
@@ -393,7 +381,6 @@ export default function Process() {
             </div>
           </div>
 
-          {/* Step divider */}
           {idx < iterations.length - 1 && (
             <div className={styles.stepDiv}>
               <span
@@ -410,7 +397,6 @@ export default function Process() {
       {/* ── CLOSING ──────────────────────────────── */}
       <section className={styles.closing}>
         <div className={styles.closingGlow} />
-
         <h2 className={styles.closingTitle}>
           BUILT WITH
           <br />
