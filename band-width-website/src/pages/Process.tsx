@@ -232,7 +232,7 @@ const iterations: Iteration[] = [
 ];
 
 export default function Process() {
-  const [activeImg, setActiveImg] = useState<{
+  const [_activeImg, setActiveImg] = useState<{
     iter: string;
     idx: number;
   } | null>(null);

@@ -138,7 +138,7 @@ export default function About() {
         <section className={styles.section}>
           <p className={styles.label}>The Team</p>
           <div className={styles.teamList}>
-            {team.map((m, i) => (
+            {team.map((m) => (
               <div key={m.name} className={styles.member}>
                 <div className={styles.memberLeft}>
                   <div
