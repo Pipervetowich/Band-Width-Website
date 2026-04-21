@@ -3,7 +3,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { posts } from "../data/posts";
 import type { CategoryColor } from "../types";
 import PostCard from "../components/PostCard";
-import styles from "./PostPage.module.css";
+import styles from "./Postpage.module.css";
 
 const CAT_STYLE: Record<CategoryColor, React.CSSProperties> = {
   purple: {
