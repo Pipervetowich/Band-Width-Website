@@ -1,6 +1,7 @@
 /* ─── BandWidth Brand Tokens ──────────────────────────────── */
 :root {
   --purple:     #7B23CF;
+  --purple-text: #a855f7;
   --purple-dim: rgba(123, 35, 207, 0.18);
   --green:      #85C584;
   --green-dim:  rgba(133, 197, 132, 0.14);

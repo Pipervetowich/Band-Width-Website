@@ -7,7 +7,7 @@ const team = [
     role: "UI/UX Design & Front-End",
     color: "#7B23CF",
     gradient: "linear-gradient(135deg,#7B23CF,#b06ae0)",
-    bio: "Led all Figma prototyping, ran A/B testing and user research, and coded the front-end screens — home, discover, notifications, posting, and the looking-for board.",
+    bio: "Led all Figma prototyping, ran A/B testing and user research, and coded the front-end screens, home, discover, notifications, posting, and the looking-for board.",
   },
   {
     name: "Shane Wierl",
@@ -21,7 +21,7 @@ const team = [
     role: "Branding & Visual Identity",
     color: "#85C584",
     gradient: "linear-gradient(135deg,#85C584,#3ABEFF)",
-    bio: "Defined the BandWidth visual language — color system, logo iterations, typography, and the design aesthetic that carries across the app and this process site.",
+    bio: "Defined the BandWidth visual language, color system, logo iterations, typography, and the design aesthetic that carries across the app and this process site.",
   },
 ];
 
@@ -34,7 +34,7 @@ const timeline = [
   {
     week: "Week 2–3",
     event:
-      "A/B tested low-fidelity prototypes. Launched Google Form — 27 responses from music communities.",
+      "A/B tested low-fidelity prototypes. Launched Google Form, 27 responses from music communities.",
   },
   {
     week: "Week 4",
@@ -101,7 +101,7 @@ export default function About() {
           </h1>
           <p className={styles.lead}>
             BandWidth is a capstone project by three students at CU Boulder.
-            This site documents the full process — every design decision, every
+            This site documents the full process, every design decision, every
             backend choice, and every lesson learned across 11 weeks.
           </p>
         </div>
@@ -125,26 +125,11 @@ export default function About() {
                 multi-band lineups over a chaos of DMs and emails.
               </p>
               <p className={styles.prose}>
-                We designed a single mobile app around three user types — Fan,
-                Band, and Host — each with distinct tools, but all connected
+                We designed a single mobile app around three user types, Fan,
+                Band, and Host, each with distinct tools, but all connected
                 through shared show data, a discovery feed, and a community
                 board where bands find venues and venues find bands.
               </p>
-            </div>
-            <div className={styles.contextMeta}>
-              {[
-                { label: "Course", value: "Capstone Project" },
-                { label: "School", value: "CU Boulder" },
-                { label: "Semester", value: "Spring 2026" },
-                { label: "Duration", value: "11 weeks" },
-                { label: "Platform", value: "iOS & Android" },
-                { label: "Status", value: "Built · Not yet launched" },
-              ].map(({ label, value }) => (
-                <div key={label} className={styles.metaRow}>
-                  <span className={styles.metaLabel}>{label}</span>
-                  <span className={styles.metaValue}>{value}</span>
-                </div>
-              ))}
             </div>
           </div>
         </section>
@@ -205,15 +190,11 @@ export default function About() {
         {/* ── CLOSING ────────────────────────────── */}
         <section className={styles.closing}>
           <div className={styles.closingGlow} />
-          <p className={styles.closingEye}>The app is coming.</p>
           <h2 className={styles.closingTitle}>
             LOCAL MUSIC,
             <br />
             <span>ALL IN ONE PLACE.</span>
           </h2>
-          <p className={styles.closingBody}>
-            BandWidth isn't live yet — this site documents how we built it.
-          </p>
           <Link to="/" className={styles.backLink}>
             ← Back to process overview
           </Link>

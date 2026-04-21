@@ -47,7 +47,7 @@
   color: #fff;
   margin-bottom: 2rem;
 }
-.accent { color: var(--purple); }
+.accent { color: var(--purple-text); }
 .lead {
   max-width: 540px;
   font-size: 1.05rem;           /* was 1rem */
@@ -284,7 +284,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--purple);
+  color: var(--purple-text);
   margin-bottom: 1.5rem;
 }
 .closingTitle {
@@ -296,7 +296,7 @@
   color: #fff;
   margin-bottom: 1.5rem;
 }
-.closingTitle span { color: var(--purple); }
+.closingTitle span { color: var(--purple-text); }
 .closingBody {
   position: relative;
   font-size: 1rem;              /* was 0.9 */

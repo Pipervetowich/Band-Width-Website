@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════════
-   BANDWIDTH — DICE-inspired process site
-   Contrast-corrected · all text legible
+   BANDWIDTH — Home Page
+   Video hero · photo team cards
    ══════════════════════════════════════════════ */
 
 .page {
@@ -16,68 +16,78 @@
   min-height: calc(100vh - 5.5rem);
 }
 
-.mosaic {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 2px;
-  background: #111;
-  overflow: hidden;
-}
-
-.tile {
+/* ── VIDEO PANEL ───────────────────────────────── */
+.videoPanel {
   position: relative;
   overflow: hidden;
+  background: #060606;
+  min-height: 500px;
+}
+
+/* Actual video/iframe — swap placeholder for this */
+.videoFrame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
+}
+
+/* Placeholder shown until video is added */
+.videoPlaceholder {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.2rem;
-  min-height: 200px;
-  transition: filter 0.3s;
-  cursor: default;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+  /* Subtle animated gradient to suggest video motion */
+  background: linear-gradient(135deg, #0d0015 0%, #060606 40%, #001020 70%, #060606 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
 }
-.tile:hover { filter: brightness(1.15); }
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-.tileCircle {
-  position: absolute;
-  width: 120%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent) 0%, transparent 65%);
-  opacity: 0.35;
-  top: -40%;
-  right: -40%;
-  pointer-events: none;
+.videoIcon {
+  opacity: 0.6;
+  transition: opacity 0.3s;
 }
-.tileLine {
+.videoPanel:hover .videoIcon { opacity: 0.9; }
+
+.videoLabel {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.6);
+}
+.videoHint {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  max-width: 220px;
+  line-height: 1.6;
+}
+
+/* Subtle bottom fade so it blends into content below on scroll */
+.videoOverlay {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--accent);
-  opacity: 0.8;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, #000);
+  pointer-events: none;
 }
 
-.tileLabel {
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 2vw, 1.6rem);
-  letter-spacing: 0.06em;
-  color: #fff;
-  position: relative;
-  z-index: 1;
-  line-height: 1;
-}
-.tileSub {
-  font-size: 0.75rem;           /* was 0.62 — too small */
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
-  position: relative;
-  z-index: 1;
-  margin-top: 0.3rem;
-}
-
-/* Hero text */
+/* ── HERO TEXT ─────────────────────────────────── */
 .heroText {
   display: flex;
   flex-direction: column;
@@ -90,7 +100,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.75rem;           /* was 0.65 */
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -120,7 +130,7 @@
 }
 .heroTitle em {
   font-style: normal;
-  color: var(--purple);
+  color: var(--purple-text);
   font-family: var(--font-display);
   font-size: 1.3em;
   letter-spacing: 0.02em;
@@ -129,9 +139,9 @@
 }
 
 .heroBody {
-  font-size: 1rem;              /* was 0.95 */
+  font-size: 1rem;
   line-height: 1.8;
-  color: rgba(255,255,255,0.75); /* was 0.42 — failing */
+  color: rgba(255,255,255,0.75);
   max-width: 420px;
   margin-bottom: 2rem;
 }
@@ -142,14 +152,14 @@
   margin-bottom: 2.5rem;
 }
 .modeChip {
-  font-size: 0.75rem;           /* was 0.65 */
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0.35rem 0.9rem;
   border: 1px solid rgba(255,255,255,0.25);
   border-radius: var(--radius-pill);
-  color: rgba(255,255,255,0.8); /* was 0.3 — failing */
+  color: rgba(255,255,255,0.8);
 }
 
 .heroNumbers {
@@ -170,11 +180,11 @@
   line-height: 1;
 }
 .heroNumbers span {
-  font-size: 0.75rem;           /* was 0.62 */
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.6); /* was 0.25 — failing */
+  color: rgba(255,255,255,0.6);
 }
 
 /* ── TICKER ────────────────────────────────────── */
@@ -194,7 +204,7 @@
   font-family: var(--font-display);
   font-size: 0.95rem;
   letter-spacing: 0.14em;
-  color: rgba(255,255,255,0.35); /* was 0.1 — nearly invisible */
+  color: rgba(255,255,255,0.55);
   white-space: nowrap;
 }
 @keyframes scroll {
@@ -204,18 +214,16 @@
 
 /* ── SHARED LABEL ──────────────────────────────── */
 .label {
-  font-size: 0.75rem;           /* was 0.65 */
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.55); /* was 0.2 — failing */
+  color: rgba(255,255,255,0.55);
   margin-bottom: 2.5rem;
 }
 
 /* ── WHAT WE BUILT ─────────────────────────────── */
-.what {
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
+.what { border-bottom: 1px solid rgba(255,255,255,0.05); }
 .whatInner {
   max-width: 1200px;
   margin: 0 auto;
@@ -230,9 +238,7 @@
   margin-bottom: 3rem;
   max-width: 740px;
 }
-.whatTitle span {
-  color: rgba(255,255,255,0.55); /* was 0.28 — too faint */
-}
+.whatTitle span { color: rgba(255,255,255,0.55); }
 .whatGrid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -254,15 +260,13 @@
   margin-bottom: 0.8rem;
 }
 .whatCard p:last-child {
-  font-size: 0.95rem;           /* was 0.88 */
+  font-size: 0.95rem;
   line-height: 1.75;
-  color: rgba(255,255,255,0.75); /* was 0.4 — failing */
+  color: rgba(255,255,255,0.75);
 }
 
 /* ── PROCESS ───────────────────────────────────── */
-.process {
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
+.process { border-bottom: 1px solid rgba(255,255,255,0.05); }
 .processInner {
   max-width: 1200px;
   margin: 0 auto;
@@ -279,13 +283,12 @@
 }
 .phase:last-child { border-bottom: none; }
 .phase:hover { padding-left: 0.6rem; }
-.phase:hover .phaseNum { color: var(--purple); }
-
+.phase:hover .phaseNum { color: var(--purple-text); }
 .phaseNum {
   font-family: var(--font-display);
   font-size: 1rem;
   letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.45); /* was 0.18 — failing */
+  color: rgba(255,255,255,0.6);
   transition: color 0.25s;
 }
 .phaseTitle {
@@ -296,54 +299,107 @@
   line-height: 1;
 }
 .phaseBody {
-  font-size: 0.95rem;           /* was 0.88 */
+  font-size: 0.95rem;
   line-height: 1.8;
-  color: rgba(255,255,255,0.75); /* was 0.38 — failing */
+  color: rgba(255,255,255,0.75);
   max-width: 520px;
 }
 
 /* ── TEAM ──────────────────────────────────────── */
-.team {
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
+.team { border-bottom: 1px solid rgba(255,255,255,0.05); }
 .teamInner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 6rem 3rem;
 }
-.teamList {
+
+.teamCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.memberCard {
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s var(--ease-out);
 }
-.member {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  transition: padding-left 0.25s var(--ease-out);
+.memberCard:hover {
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-4px);
 }
-.member:last-child { border-bottom: none; }
-.member:hover { padding-left: 0.6rem; }
-.memberNum {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  width: 3.5rem;
+
+/* Photo */
+.memberPhoto {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
   flex-shrink: 0;
 }
+.memberImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.memberPhotoPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  /* Dashed border inside */
+  outline: 1px dashed rgba(255,255,255,0.12);
+  outline-offset: -12px;
+}
+.memberInitial {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 1;
+  opacity: 0.35;
+}
+.memberPhotoHint {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+.memberAccentBar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+}
+
+/* Info */
+.memberInfo {
+  padding: 1.5rem 1.5rem 1.75rem;
+  background: rgba(255,255,255,0.02);
+  flex: 1;
+}
 .memberName {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: #fff;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
 }
 .memberRole {
-  font-size: 0.8rem;            /* was 0.75 */
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: rgba(255,255,255,0.6); /* was 0.28 — failing */
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.memberBio {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.6);
 }
 
 /* ── STACK STRIP ───────────────────────────────── */
@@ -354,19 +410,16 @@
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 .stackItem {
-  font-size: 0.75rem;           /* was 0.65 */
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 0.9rem 1.4rem;
-  color: rgba(255,255,255,0.55); /* was 0.2 — failing */
+  color: rgba(255,255,255,0.55);
   border-right: 1px solid rgba(255,255,255,0.06);
   transition: color 0.2s, background 0.2s;
 }
-.stackItem:hover {
-  color: #fff;
-  background: rgba(123,35,207,0.12);
-}
+.stackItem:hover { color: #fff; background: rgba(123,35,207,0.12); }
 
 /* ── CLOSING ───────────────────────────────────── */
 .closing {
@@ -387,11 +440,11 @@
 }
 .closingEye {
   position: relative;
-  font-size: 0.75rem;           /* was 0.65 */
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--purple);
+  color: var(--purple-text);
   margin-bottom: 2rem;
 }
 .closingTitle {
@@ -405,25 +458,26 @@
 }
 .closingSub {
   position: relative;
-  font-size: 1rem;              /* was 0.9 */
+  font-size: 1rem;
   line-height: 1.8;
-  color: rgba(255,255,255,0.7); /* was 0.28 — failing */
+  color: rgba(255,255,255,0.7);
 }
 
 /* ── RESPONSIVE ────────────────────────────────── */
 @media (max-width: 1024px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .mosaic { grid-template-rows: auto; min-height: 340px; }
-  .heroText { padding: 3rem 2rem; border-left: none; border-top: 1px solid rgba(255,255,255,0.07); }
-  .phase { grid-template-columns: 3rem 1fr; }
-  .phaseBody { grid-column: 2; }
-  .whatGrid { grid-template-columns: 1fr; }
+  .hero           { grid-template-columns: 1fr; min-height: auto; }
+  .videoPanel     { min-height: 56vw; }
+  .heroText       { padding: 3rem 2rem; border-left: none; border-top: 1px solid rgba(255,255,255,0.07); }
+  .phase          { grid-template-columns: 3rem 1fr; }
+  .phaseBody      { grid-column: 2; }
+  .whatGrid       { grid-template-columns: 1fr; }
+  .teamCards      { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
-  .mosaic { grid-template-columns: 1fr 1fr; }
-  .phase { grid-template-columns: 1fr; gap: 0.5rem; }
-  .phaseNum { display: none; }
+  .phase          { grid-template-columns: 1fr; gap: 0.5rem; }
+  .phaseNum       { display: none; }
   .processInner, .whatInner, .teamInner { padding: 4rem 1.5rem; }
-  .heroNumbers { gap: 1.2rem; }
+  .heroNumbers    { gap: 1.2rem; }
   .heroNumbers strong { font-size: 1.7rem; }
+  .teamCards      { grid-template-columns: 1fr; }
 }

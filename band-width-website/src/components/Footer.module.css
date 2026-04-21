@@ -24,7 +24,7 @@
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--purple);
+  color: var(--purple-text);
   margin-bottom: 1rem;
 }
 .footerDesc {

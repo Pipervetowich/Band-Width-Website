@@ -49,6 +49,12 @@ export default function Navbar() {
             Overview
           </Link>
           <Link
+            to="/process"
+            className={`${styles.link} ${pathname === "/process" ? styles.active : ""}`}
+          >
+            Process
+          </Link>
+          <Link
             to="/about"
             className={`${styles.link} ${pathname === "/about" ? styles.active : ""}`}
           >

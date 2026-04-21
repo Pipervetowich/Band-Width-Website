@@ -7,17 +7,17 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.left}>
           <p className={styles.footerTitle}>BANDWIDTH</p>
-          <p className={styles.footerSub}>A capstone project · Spring 2026</p>
+          <p className={styles.footerSub}>A capstone project</p>
           <p className={styles.footerDesc}>
             Connecting fans, bands, and venues.
             <br />
-            Built by three people over eleven weeks.
           </p>
         </div>
         <div className={styles.right}>
           <div className={styles.col}>
-            <span className={styles.colLabel}>Process</span>
+            <span className={styles.colLabel}>Site</span>
             <Link to="/">Overview</Link>
+            <Link to="/process">Process</Link>
             <Link to="/about">About</Link>
           </div>
           <div className={styles.col}>

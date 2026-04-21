@@ -1,40 +1,5 @@
 import styles from "./Home.module.css";
 
-// Abstract poster tiles — pure CSS art, no images needed
-const posters = [
-  {
-    bg: "#1a0a2e",
-    accent: "#7B23CF",
-    label: "FAN",
-    sub: "Discover local shows",
-  },
-  {
-    bg: "#0a1a0e",
-    accent: "#85C584",
-    label: "BAND",
-    sub: "Build your local crowd",
-  },
-  { bg: "#0a1520", accent: "#3ABEFF", label: "HOST", sub: "Run your venue" },
-  {
-    bg: "#1e0a0a",
-    accent: "#e05252",
-    label: "DISCOVER",
-    sub: "Tonight in your city",
-  },
-  {
-    bg: "#1a100a",
-    accent: "#e0a852",
-    label: "CONNECT",
-    sub: "Fan · Band · Venue",
-  },
-  {
-    bg: "#0f0a1e",
-    accent: "#a06ae0",
-    label: "PROMOTE",
-    sub: "One post everywhere",
-  },
-];
-
 const phases = [
   {
     num: "01",
@@ -59,47 +24,92 @@ const phases = [
   {
     num: "05",
     title: "Ship",
-    body: "11 weeks. 3 builders. One app that connects the people who make local music happen with the people who want to find it.",
+    body: "3 developers. One app that connects the people who make local music happen with the people who want to find it.",
   },
 ];
 
 const team = [
-  { name: "Piper Vetowich", role: "UI/UX & Front-End", color: "#7B23CF" },
-  { name: "Shane Wierl", role: "Backend & Infrastructure", color: "#3ABEFF" },
-  { name: "Emme", role: "Branding & Identity", color: "#85C584" },
+  {
+    name: "Piper Vetowich",
+    role: "UI/UX & Front-End",
+    color: "#7B23CF",
+    gradient: "linear-gradient(160deg, #1a0a2e 0%, #2d1050 100%)",
+    accent: "#7B23CF",
+    bio: "Led Figma prototyping, user research, and all front-end screens.",
+    photo: "../public/Piper.jpg",
+  },
+  {
+    name: "Shane Wierl",
+    role: "Backend & Infrastructure",
+    color: "#3ABEFF",
+    gradient: "linear-gradient(160deg, #0a1520 0%, #0d2840 100%)",
+    accent: "#3ABEFF",
+    bio: "Built the entire backend: database, API routes, auth, and real-time features.",
+    photo: "../public/Shane.jpg",
+  },
+  {
+    name: "Emme",
+    role: "Branding & Identity",
+    color: "#85C584",
+    gradient: "linear-gradient(160deg, #0a1a0e 0%, #122614 100%)",
+    accent: "#85C584",
+    bio: "Defined the visual language, color system, logo, and brand aesthetic.",
+    photo: "../public/Emme.jpg",
+  },
 ];
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      {/* ── MOSAIC HERO ─────────────────────────── */}
+      {/* ── HERO ────────────────────────────────── */}
       <section className={styles.hero}>
-        {/* Poster mosaic — left side */}
-        <div className={styles.mosaic} aria-hidden>
-          {posters.map((p, i) => (
-            <div
-              key={i}
-              className={styles.tile}
-              style={
-                {
-                  background: p.bg,
-                  "--accent": p.accent,
-                } as React.CSSProperties
-              }
-            >
-              <span className={styles.tileLabel}>{p.label}</span>
-              <span className={styles.tileSub}>{p.sub}</span>
-              <div className={styles.tileCircle} />
-              <div className={styles.tileLine} />
+        {/* ── VIDEO PANEL ─────────────────────── */}
+        <div className={styles.videoPanel}>
+          {/*
+            TO ADD YOUR VIDEO:
+            Option A — YouTube embed:
+              Replace the div.videoPlaceholder with:
+              <iframe
+                className={styles.videoFrame}
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=YOUR_VIDEO_ID&controls=0"
+                allow="autoplay; fullscreen"
+                allowFullScreen
+              />
+
+            Option B — local/hosted mp4:
+              <video className={styles.videoFrame} autoPlay muted loop playsInline>
+                <source src="/videos/bandwidth-demo.mp4" type="video/mp4" />
+              </video>
+          */}
+          <div className={styles.videoPlaceholder}>
+            <div className={styles.videoIcon}>
+              <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+                <circle
+                  cx="26"
+                  cy="26"
+                  r="25"
+                  stroke="rgba(255,255,255,0.15)"
+                  strokeWidth="1.5"
+                />
+                <polygon
+                  points="21,17 39,26 21,35"
+                  fill="rgba(255,255,255,0.7)"
+                />
+              </svg>
             </div>
-          ))}
+            <p className={styles.videoLabel}>App Demo Video</p>
+            <p className={styles.videoHint}>
+              Drop a YouTube embed or mp4 src here
+            </p>
+          </div>
+          <div className={styles.videoOverlay} />
         </div>
 
-        {/* Hero copy — right side */}
+        {/* ── HERO COPY ───────────────────────── */}
         <div className={styles.heroText}>
           <p className={styles.heroEye}>
             <span className={styles.dot} />
-            Capstone · Spring 2026
+            Capstone
           </p>
 
           <h1 className={styles.heroTitle}>
@@ -110,8 +120,8 @@ export default function Home() {
 
           <p className={styles.heroBody}>
             BandWidth connects fans, bands, and venues in one place. This site
-            documents how three people built it — from the first wireframe to a
-            working mobile app.
+            documents how we built it from the first wireframe to a working
+            mobile app.
           </p>
 
           <div className={styles.heroMode}>
@@ -123,10 +133,6 @@ export default function Home() {
           </div>
 
           <div className={styles.heroNumbers}>
-            <div>
-              <strong>11</strong>
-              <span>weeks</span>
-            </div>
             <div>
               <strong>3</strong>
               <span>builders</span>
@@ -142,19 +148,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ── MARQUEE ─────────────────────────────── */}
-      <div className={styles.ticker} aria-hidden>
-        <div className={styles.tickerTrack}>
-          {Array.from({ length: 4 }).map((_, i) => (
-            <span key={i}>
-              BANDWIDTH&nbsp;·&nbsp;LOCAL
-              MUSIC&nbsp;·&nbsp;FAN&nbsp;·&nbsp;BAND&nbsp;·&nbsp;HOST&nbsp;·&nbsp;
-              BOULDER CO&nbsp;·&nbsp;CAPSTONE 2026&nbsp;·&nbsp;
-            </span>
-          ))}
-        </div>
-      </div>
 
       {/* ── WHAT WE BUILT ───────────────────────── */}
       <section className={styles.what}>
@@ -204,7 +197,7 @@ export default function Home() {
       <section className={styles.process}>
         <div className={styles.processInner}>
           <p className={styles.label}>How We Built It</p>
-          {phases.map((p, i) => (
+          {phases.map((p) => (
             <div key={p.num} className={styles.phase}>
               <span className={styles.phaseNum}>{p.num}</span>
               <h3 className={styles.phaseTitle}>{p.title}</h3>
@@ -218,15 +211,48 @@ export default function Home() {
       <section className={styles.team}>
         <div className={styles.teamInner}>
           <p className={styles.label}>The Team</p>
-          <div className={styles.teamList}>
-            {team.map((m, i) => (
-              <div key={m.name} className={styles.member}>
-                <div className={styles.memberNum} style={{ color: m.color }}>
-                  0{i + 1}
+          <div className={styles.teamCards}>
+            {team.map((m) => (
+              <div key={m.name} className={styles.memberCard}>
+                {/* Photo area */}
+                <div
+                  className={styles.memberPhoto}
+                  style={{ background: m.gradient }}
+                >
+                  {m.photo ? (
+                    <img
+                      src={m.photo}
+                      alt={m.name}
+                      className={styles.memberImg}
+                    />
+                  ) : (
+                    <div className={styles.memberPhotoPlaceholder}>
+                      {/*
+                        Replace with:
+                        <img src="/images/piper.jpg" alt="Piper Vetowich" className={styles.memberImg} />
+                      */}
+                      <div
+                        className={styles.memberInitial}
+                        style={{ color: m.accent }}
+                      >
+                        {m.name[0]}
+                      </div>
+                      <p className={styles.memberPhotoHint}>Add photo</p>
+                    </div>
+                  )}
+                  <div
+                    className={styles.memberAccentBar}
+                    style={{ background: m.accent }}
+                  />
                 </div>
-                <div>
+
+                {/* Info */}
+                <div className={styles.memberInfo}>
                   <p className={styles.memberName}>{m.name}</p>
-                  <p className={styles.memberRole}>{m.role}</p>
+                  <p className={styles.memberRole} style={{ color: m.accent }}>
+                    {m.role}
+                  </p>
+                  <p className={styles.memberBio}>{m.bio}</p>
                 </div>
               </div>
             ))}
@@ -234,39 +260,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── STACK STRIP ─────────────────────────── */}
-      <div className={styles.stackStrip}>
-        {[
-          "React Native",
-          "Expo EAS",
-          "TypeScript",
-          "Supabase",
-          "PostgreSQL",
-          "Prisma",
-          "Render",
-          "Cloudinary",
-          "Figma",
-        ].map((t) => (
-          <span key={t} className={styles.stackItem}>
-            {t}
-          </span>
-        ))}
-      </div>
-
       {/* ── CLOSING ─────────────────────────────── */}
       <section className={styles.closing}>
         <div className={styles.closingGlow} />
-        <p className={styles.closingEye}>Not launched yet. Fully built.</p>
         <h2 className={styles.closingTitle}>
           LOCAL MUSIC,
           <br />
           ALL IN ONE PLACE.
         </h2>
-        <p className={styles.closingSub}>
-          This is the process site for our capstone project.
-          <br />
-          The app is coming.
-        </p>
       </section>
     </div>
   );
