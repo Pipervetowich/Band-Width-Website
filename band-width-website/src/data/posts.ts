@@ -8,137 +8,174 @@ export const posts: Post[] = [
     subtitle: 'Local music deserves a real home.',
     category: 'Origin Story',
     categoryColor: 'purple',
-    date: 'March 10, 2025',
-    readTime: '5 min read',
+    date: 'January 18, 2026',
+    readTime: '4 min read',
     author: 'The BandWidth Team',
     featured: true,
     excerpt:
-      'We kept showing up to great local shows, barely hearing about them in time — or worse, missing them entirely. So we built the thing that should already exist.',
+      'We kept showing up to great local shows barely hearing about them in time — or worse, missing them entirely. So we built the thing that should already exist.',
     body: `
-      <p>It started at a basement show in Boulder. Forty people packed into a space meant for twenty, watching a band that would blow up six months later. The problem? We almost didn't go. We found out about it through a flyer stapled to a telephone pole — the afternoon of the show.</p>
-      <p>That moment stuck. Here was an incredible local music scene, and the discovery mechanism was <em>telephone poles</em>. Instagram stories that evaporated in 24 hours. Word of mouth that only reached people already plugged in. The whole ecosystem was working against fans finding new music and bands building real local followings.</p>
-      <h3>Three problems, one product</h3>
-      <p><strong>Fans</strong> had no single place to find what was happening locally. Discovery was broken — finding a new artist meant already knowing they existed.</p>
-      <p><strong>Bands</strong> were juggling five different platforms to reach their audience: Instagram for promo, Bandcamp for music, Eventbrite for tickets, Facebook events, and group texts to their crew. None of it was connected.</p>
-      <p><strong>Venues and hosts</strong> had the same fragmentation problem — plus the added chaos of coordinating multiple bands per show with zero shared tooling.</p>
-      <p>BandWidth is our answer. One place, three modes: Fan, Band, Host. Local music, all in one place.</p>
-      <h3>What we're building toward</h3>
-      <p>We're starting with Boulder and expanding city by city. The goal is never to become a global streaming platform — Spotify exists. The goal is to be the definitive home for local music in every city we enter. The place where you find out about a show before it sells out. Where a band builds their first 1,000 real local fans. Where a venue runs their entire booking and promo workflow without switching tabs.</p>
+      <p>BandWidth began with a simple frustration: local music scenes are vibrant and alive, yet completely invisible to the people who would love them most. Fans miss shows because they never hear about them. Bands juggle half a dozen platforms just to announce a single gig. Venues have no shared tooling to coordinate lineups, communicate changes, or build lasting relationships with the people walking through their doors.</p>
+
+      <p>From the start, we designed BandWidth around three distinct user types — <strong>Fans, Bands, and Hosts</strong> — each with their own needs, but all connected through a single platform. A fan follows their favorite local acts and gets notified the moment a new show is announced. A band creates one post and it reaches everyone who cares. A host manages their entire booking workflow without switching tabs.</p>
+
+      <h3>Starting from scratch, together</h3>
+      <p>We kicked off the project with a clear division of responsibilities. Piper led UI/UX design, building out our Figma prototypes and later translating those designs into front-end code. Shane owned the backend infrastructure — database architecture, API routes, authentication, and server deployment. Emme drove branding, visual identity, and the design systems that tie the whole experience together.</p>
+
+      <p>Our first team meeting established the foundations: we set up Expo so every team member could run a live preview of the app on their own phone, launched a Trello board to manage tasks, and committed to user testing from day one. Within the first week, we had a working development environment, a rough home screen, and a shared sense of what we were trying to build.</p>
+
+      <h3>The goal</h3>
+      <p>We are not building a global streaming platform — Spotify already exists. We are building the definitive home for local music: the place where you find out about a show before it sells out, where a band builds their first real local following, and where a venue runs their entire show workflow in one place.</p>
     `,
   },
   {
     id: 2,
-    slug: 'designing-the-bandwidth-brand',
-    title: 'Designing the BandWidth Brand',
-    subtitle: 'Bold colors, local energy, zero compromise.',
+    slug: 'designing-for-real-users',
+    title: 'Designing for Real Users',
+    subtitle: 'What 27 survey responses and three rounds of testing taught us.',
     category: 'Design',
     categoryColor: 'green',
-    date: 'March 18, 2025',
-    readTime: '7 min read',
-    author: 'Design Team',
+    date: 'February 11, 2026',
+    readTime: '6 min read',
+    author: 'Piper Vetowich',
     excerpt:
-      "We wanted a brand that felt like being at a show — dark room, colored stage lights, that electric moment before the first note drops.",
+      'We ran A/B tests on low-fidelity prototypes, posted to music subreddits, and interviewed band members. Here is what we learned.',
     body: `
-      <p>Most music apps feel like tech companies trying to look cool. Lots of black and neon — but focus-grouped, safe, soulless. We wanted BandWidth to feel like music actually feels: loud, alive, a little unpredictable.</p>
-      <h3>Starting with color</h3>
-      <p>We built the palette around one image: standing in a dark venue, stage lights cutting through. <strong>Background Black (#3A2D32)</strong> isn't pure black — it has warmth, like wood and concrete and the bodies of an actual room. <strong>Electric Purple (#7B23CF)</strong> is the classic venue wash. <strong>Neon Green (#85C584)</strong> is the unexpected accent, the light that catches a guitar neck. <strong>Bright Blue (#3ABEFF)</strong> is the cold follow-spot.</p>
-      <p>Each color has a role and they never compete. Purple leads. Green accents. Blue highlights. Black grounds everything.</p>
-      <h3>The logo evolution</h3>
-      <p>We went through dozens of logo directions before landing on the house-with-headphones icon. The brief: immediately readable, works small (app icon), feels handmade without being precious. The retro script wordmark came from poring over old band logos — that chunky, slightly unserious energy that great local acts always carry.</p>
-      <h3>Typography</h3>
-      <p>SF Pro is Apple's system font, and using it was a deliberate mobile-first choice. The platform's native type keeps the interface fast and familiar; the all-caps headline treatment gives us enough personality to feel branded. We lean on weight and scale for hierarchy — one font family, infinite range.</p>
-      <h3>UI components</h3>
-      <p>The button system tells the whole story: <strong>filled purple</strong> for primary actions (Log In, Buy Tickets), <strong>outlined on dark</strong> for secondary (Create Account). Every interactive element has a visible glow state — that moment when you tap should feel like a light turning on.</p>
+      <p>Good design is not about what looks right to the designer — it is about what makes sense to the person holding the phone. That lesson shaped every design decision we made on BandWidth.</p>
+
+      <h3>Low fidelity first</h3>
+      <p>We started with Figma wireframes and deliberately kept them rough. Before writing a single line of front-end code, we ran A/B tests on two versions of every major screen: the home page, the show page, the Discover feed, and the profile pages. We presented these to classmates, band members, and a mentor, asking them to pick which layout felt more intuitive.</p>
+
+      <p>The results were clear. Users preferred the horizontal carousel for upcoming shows, wanted more information visible on event cards (time, location, and price without tapping into the detail view), and overwhelmingly chose the bolder, uppercase logo treatment over the more playful lowercase alternative.</p>
+
+      <h3>Scaling up: 27 responses from the internet</h3>
+      <p>We posted our Google Form to music-focused subreddits — including r/indieheads — and asked co-workers and friends to participate. Within 24 hours we had 27 responses. We mapped every piece of feedback to a specific screen using an affinity diagram, which revealed the most critical pain points:</p>
+
+      <ul>
+        <li>Notifications felt out of place on the home screen and should live in a dedicated update center</li>
+        <li>The Discover page needed richer filtering — genre, show type, age range, location radius, and date availability</li>
+        <li>Show cards needed more context: time, venue, price, and event type visible at a glance</li>
+        <li>The distinction between Fan, Band, and Host profiles was not immediately obvious</li>
+        <li>Privacy settings needed to be clearer — users wanted to understand exactly what information was visible to others</li>
+      </ul>
+
+      <h3>Moving to mid fidelity</h3>
+      <p>After integrating the survey feedback, we built a full set of mid-fidelity prototypes using real placeholder data — actual band names, real poster images, and genuine show details. This made it possible to evaluate layout decisions in a realistic context. We combined the best elements from both designers' work into a unified visual language and began the next round of usability tests.</p>
+
+      <p>One insight repeated across every round of testing: what feels obvious to the person who built something is rarely obvious to someone encountering it for the first time. Designing BandWidth has been a continuous exercise in letting go of assumptions.</p>
     `,
   },
   {
     id: 3,
-    slug: 'building-the-discovery-feed',
-    title: 'Building the Discovery Feed',
-    subtitle: "The hardest UX problem we've tackled.",
-    category: 'Product',
-    categoryColor: 'blue',
-    date: 'March 24, 2025',
-    readTime: '6 min read',
-    author: 'Product Team',
+    slug: 'building-the-backend',
+    title: 'Building the Backend: Databases, Routes, and Real Auth',
+    subtitle: 'From a blank Supabase project to a fully connected mobile app.',
+    category: 'Engineering',
+    categoryColor: 'purple',
+    date: 'February 3, 2026',
+    readTime: '7 min read',
+    author: 'Shane Wierl',
     excerpt:
-      "How do you show someone music they don't know they want yet? We tried a lot of approaches before finding one that actually worked.",
+      'We needed a backend that could handle three distinct user types, image uploads, real-time notifications, and a relational data model. Here is how we built it.',
     body: `
-      <p>The discovery feed is the heart of BandWidth for fans. It answers "what's happening in my city tonight?" and "who should I check out this weekend?" Getting it right is everything.</p>
-      <h3>The cold start problem</h3>
-      <p>Every recommendation system hits this: when a new user signs up, you know nothing about them. Most apps punt with a genre-picker screen. We find those patronizing — nobody is just a "rock fan." Our solution: <strong>location first, taste second</strong>. Show them what's happening nearby in the next 7 days. Let them interact. Learn from what they save, skip, or tap. Within three sessions we have enough signal to personalize meaningfully.</p>
-      <h3>Card design</h3>
-      <p>We spent weeks on the event card. It needs to convey who's playing, where, when, and why you should care — in under two seconds. The hierarchy we landed on: Band name (largest, headline weight) → Tonight/Tomorrow/Date (blue, prominent) → Venue + neighborhood → Genre tags (green pills). When an event is Live Tonight, the card gets a pulsing green border you cannot miss.</p>
-      <h3>What we got wrong first</h3>
-      <p>Our first version was too algorithmic. It penalized artists with low follower counts — hiding exactly the local artists we exist to support. Version two flipped the weight: <strong>proximity and recency beat popularity</strong>. A band with 200 local followers playing tomorrow ranks above a touring act with 50K playing next month. That's the whole point.</p>
+      <p>Before any of the design work could become a real app, we needed a solid foundation underneath it. That meant making deliberate, pragmatic decisions about our tech stack — choosing tools we could move fast with, without painting ourselves into a corner later.</p>
+
+      <h3>The stack</h3>
+      <p>We settled on <strong>PostgreSQL hosted on Supabase</strong> as our database, with <strong>Prisma</strong> as our ORM to make queries more readable and type-safe. The backend API runs on <strong>Render</strong>, giving us a persistent HTTPS server we can call from anywhere during development and production. For image storage, we integrated <strong>Cloudinary</strong>, which handles show poster uploads and profile media without us managing our own file server.</p>
+
+      <p>Early on, we removed Docker containerization to reduce complexity at this stage of the project. The goal was to ship a working app, not to over-engineer the infrastructure. We can layer in containerization later.</p>
+
+      <h3>The data model</h3>
+      <p>Our schema evolved significantly over the first several weeks. The final model includes tables for <strong>Users, Bands, Hosts, Shows, Favorites, and LookingForPosts</strong>, with carefully designed relationships between them. Shows support tagged users (so both bands and hosts share ownership of an event), inherited genre tags from participating artists, lineup configurations with per-performer set durations, and show status tracking (scheduled, live, postponed, canceled).</p>
+
+      <p>We implemented <strong>Row Level Security (RLS)</strong> in Supabase to enforce permission boundaries at the database layer — ensuring that fans, bands, and hosts each only see and modify the data they are authorized to touch.</p>
+
+      <h3>The Expo challenge</h3>
+      <p>One of the earliest and most time-consuming technical problems was getting Expo to communicate reliably with our backend over HTTPS. Expo's production servers have security configurations that blocked standard API calls during development. The solution was to switch to <strong>Expo EAS (Expo Application Services)</strong>, which creates a custom development build installed directly on the device, bypassing Expo's production server constraints entirely. This is a well-known challenge in mobile development — and finding the fix unblocked the entire team.</p>
+
+      <h3>What we'd do differently</h3>
+      <p>We would set up a CI pipeline from day one. Early in the project, a single bad import change took hours to track down across the codebase. Automated testing and type-checking on every commit would have caught it in minutes. We have since adopted stricter code review and component isolation practices, which have made merging parallel work significantly less painful.</p>
     `,
   },
   {
     id: 4,
-    slug: 'band-mode-tools',
-    title: 'Band Mode: Tools Artists Actually Need',
-    subtitle: 'We talked to 40 local bands before writing a line of code.',
+    slug: 'three-profiles-one-app',
+    title: 'Three Profiles, One App',
+    subtitle: 'Building a platform that works for fans, bands, and venues simultaneously.',
     category: 'Product',
     categoryColor: 'blue',
-    date: 'April 2, 2025',
-    readTime: '8 min read',
-    author: 'Product Team',
+    date: 'February 17, 2026',
+    readTime: '5 min read',
+    author: 'Shane Wierl',
     excerpt:
-      'Band mode is built entirely for artists. Every feature came from a real conversation with a real band.',
+      'One account. Three modes. The challenge of designing a single product that serves completely different users without feeling fragmented.',
     body: `
-      <p>Before we built anything for Band Mode, we ran 40 interviews with local musicians — DIY artists, venue regulars, bands on the verge. The same frustrations kept surfacing, and they became our feature list.</p>
-      <h3>Show promotion is fragmented</h3>
-      <p>Every band was posting the same show info to 4–6 platforms, manually, with different formatting on each. The fix: write it once in BandWidth and we help push it everywhere. One set of show details + poster, formatted and scheduled for Instagram, Facebook, and your BandWidth profile simultaneously.</p>
-      <h3>No local fan list</h3>
-      <p>Bands knew their Spotify listener count. They had no idea how many people in their own city followed them. BandWidth gives every band a <strong>Local Fan Count</strong> — fans who've marked themselves as local, attended past shows, or saved upcoming events. This is the number that actually matters for booking negotiations.</p>
-      <h3>Post-show communication</h3>
-      <p>The moment right after a great show is the highest-intent moment in a fan's relationship with a band. Most bands have zero way to reach those people. BandWidth lets bands message everyone who checked in or marked themselves attending: merch links, new music, next show announcements — sent directly to people who were just at your show.</p>
+      <p>Most platforms pick one user type and optimize for them. BandWidth has to serve three simultaneously — and the three are very different people with very different needs. A fan wants to discover shows. A band wants to manage their presence, announce events, and reach local followers. A host wants to run their booking workflow and coordinate multi-band lineups. The product design challenge was building one coherent app that serves all three without feeling like three apps stitched together.</p>
+
+      <h3>The profile system</h3>
+      <p>Every BandWidth account can hold multiple roles. A user can be a Fan, a Band member, and a Host — all under one login. Switching between views is seamless: the same profile page surfaces different information depending on which role is active. Band profiles show upcoming shows, genre tags, Spotify and Instagram links, and a bio. Host profiles display venue capacity, address, event type tags, and upcoming bookings. Fan profiles track the artists they follow and the shows they have attended.</p>
+
+      <p>Shows support an <strong>inheritance system</strong> — when a band or host is tagged in a show post, the show automatically inherits their genre tags and is discoverable through those filters without any additional input from the poster. This keeps the tagging experience lightweight while keeping the search experience rich.</p>
+
+      <h3>The LookingFor board</h3>
+      <p>One feature that emerged directly from user research is the <strong>LookingFor</strong> board — a community space where bands post if they are seeking a venue, and hosts post if they have an open slot to fill. It is the digital version of a flyer stapled to a telephone pole at a rehearsal space, except it actually reaches the right people. Posts are filterable by connection type: Band → Host, Host → Band, or Band → Band for co-headlining opportunities.</p>
+
+      <h3>Show management for bands and hosts</h3>
+      <p>Bands and hosts share ownership of a show once it is created. Either party can edit details, update the status, and add lineup information. A dedicated Shows manager page lets bands and hosts see all their current and past events in one view, with inline Edit and Delete actions. When show details change, the notification system automatically alerts every fan who has RSVPed or favorited a participating artist — without the band having to do anything extra.</p>
     `,
   },
   {
     id: 5,
-    slug: 'host-mode-venues',
-    title: 'Host Mode: The Venue Command Center',
-    subtitle: 'The venue workflow was completely broken. We fixed it.',
-    category: 'Product',
-    categoryColor: 'blue',
-    date: 'April 8, 2025',
+    slug: 'notification-system',
+    title: 'Building the Notification System',
+    subtitle: 'Keeping fans connected to the shows they care about.',
+    category: 'Engineering',
+    categoryColor: 'purple',
+    date: 'February 26, 2026',
     readTime: '5 min read',
-    author: 'Product Team',
+    author: 'Piper Vetowich',
     excerpt:
-      'From booking inquiries to night-of logistics, Host Mode gives venue operators one place to run everything.',
+      'Show postponements, last-minute lineup changes, and day-of reminders. Here is how we designed a notification center that fans actually want to use.',
     body: `
-      <p>Running a music venue is operationally chaotic. Booking conversations happen across email, DMs, and texts — sometimes all three for the same show. Lineups change. Bands cancel. Promotion is always someone else's problem until suddenly it's nobody's problem and the show is tomorrow.</p>
-      <h3>The booking pipeline</h3>
-      <p>Host Mode gives venues a simple kanban pipeline: Inquiry → Confirmed → Announced → Complete. Every band they're talking to lives here. When a show moves to Confirmed, BandWidth automatically creates the event and notifies fans of the venue and every band on the bill.</p>
-      <h3>Multi-band coordination</h3>
-      <p>Instead of three separate email threads with three bands on the same bill, there's one shared thread in BandWidth. Load-in times, set lengths, soundcheck order — all in one place, visible to everyone involved. This feature alone has saved venue operators hours per show week.</p>
-      <h3>Night-of check-in</h3>
-      <p>A lightweight door check-in tool that works on any phone. Scan a QR, tap a name, done. Attendance syncs back to BandWidth so fans get credit for showing up — which feeds recommendations — and bands see their real attendance numbers, not just "it felt like a good crowd."</p>
+      <p>Notifications in most apps are an afterthought — a spray of alerts that train users to turn them off. We wanted BandWidth's update center to be the opposite: a space users check because it reliably surfaces information that matters to them.</p>
+
+      <h3>What we notify fans about</h3>
+      <p>The notification system covers six core trigger types: a favorited artist announces a new show, a show the user RSVPed to has its details updated, a show is postponed or canceled, a day-before reminder for an upcoming event, a same-day reminder when doors open, and a live alert when a show is actively underway. Each notification type has a distinct icon, making it immediately scannable — a calendar icon for reminders, a star for artist announcements, a location pin for nearby shows, and a megaphone for app updates.</p>
+
+      <h3>The update center</h3>
+      <p>Rather than surfacing notifications directly on the home screen (a design we moved away from after user feedback), we built a dedicated <strong>Notifications Center</strong> accessible via a bell icon in the top-right corner of the home screen. The icon displays a red dot when there are unread notifications — a pattern users recognize immediately. Inside the center, notifications are grouped by date with a "TODAY" section and an "EARLIER" section. Unread items carry a subtle visual indicator; users can dismiss them individually by tapping or clear everything at once with a "Mark all as read" button.</p>
+
+      <h3>What we learned</h3>
+      <p>Designing the notification system reinforced a theme that ran through the entire project: consistency is more important than cleverness. Our first implementation had notifications scattered across the home screen in a feed-style widget, which clashed with the rest of the layout and confused users during testing. Moving everything into one dedicated space made the home screen cleaner and made the notification center more useful — because users always knew exactly where to look.</p>
     `,
   },
   {
     id: 6,
-    slug: 'our-tech-stack',
-    title: 'Our Tech Stack and Why We Chose It',
-    subtitle: 'React Native, Supabase, and a few opinions.',
-    category: 'Engineering',
-    categoryColor: 'purple',
-    date: 'April 14, 2025',
-    readTime: '9 min read',
-    author: 'Engineering Team',
+    slug: 'branding-bandwidth',
+    title: 'Branding BandWidth: Identity, Logo, and Visual Language',
+    subtitle: 'From mood boards to a cohesive design system.',
+    category: 'Design',
+    categoryColor: 'green',
+    date: 'March 8, 2026',
+    readTime: '6 min read',
+    author: 'Emme & Piper',
     excerpt:
-      "We needed to ship fast, support iOS and Android simultaneously, and not make choices we'd regret in 18 months. Here's what we landed on.",
+      'We went through dozens of logo directions, consulted a branding professor, and iterated on our visual identity for weeks. Here is where we landed and why.',
     body: `
-      <p>We're a small team. Every tech decision gets stress-tested against one question: will this slow us down in a year? Here's what we chose and why.</p>
-      <h3>React Native + Expo</h3>
-      <p>Single codebase for iOS and Android was non-negotiable at our current team size. We evaluated Flutter seriously — the performance story is compelling — but our team's TypeScript fluency and the React ecosystem depth tipped us toward RN. Expo handles the build pipeline, over-the-air updates, and a lot of native module complexity we don't want to own right now.</p>
-      <h3>Supabase</h3>
-      <p>Postgres with a real-time layer, auth, storage, and edge functions — all with a generous free tier. We considered Firebase but the query flexibility of SQL matters for our event/location/time data. Supabase's RLS (Row Level Security) lets us enforce fan/band/host permission boundaries at the database layer, which feels right for our data model.</p>
-      <h3>TypeScript everywhere</h3>
-      <p>The app, this blog, our internal tooling — all TypeScript. The upfront cost of typing is real, but catching shape mismatches between our API and UI before they hit production has already saved us multiple late-night debugging sessions. Shared types between the app and backend are a force multiplier.</p>
-      <h3>What we'd change</h3>
-      <p>We went too long without a proper CI pipeline. Tests were an afterthought early on and we're paying that debt now. If you're starting a new project: set up CI on day one, even if it just runs the TypeScript compiler. Future you will be grateful.</p>
+      <p>Building a brand for a music app is deceptively hard. Music is visceral and personal — a brand that feels too corporate loses the audience immediately, but one that feels too informal loses credibility with venues and bands who need a professional tool. We spent considerable time trying to thread that needle.</p>
+
+      <h3>The logo journey</h3>
+      <p>Our initial logo used a house with headphones icon to represent the dual nature of the platform — music and community, indoor shows and house venues. User testing split the audience evenly on the icon, but feedback from a visual branding professor shifted our direction. The house, he noted, read more like real estate than music. His advice: lean into the letterform. Play with the width of the letters in "BandWidth" itself — let the name do the work.</p>
+
+      <p>We explored neon guitar signs, angled bar signs, and location pins shaped like microphones before arriving at a cleaner direction: a bold "BW" mark for the app icon, paired with a typographic wordmark for the full logo. The squiggle motif — which users across multiple rounds of testing consistently described as feeling like sound or music — became a recurring decorative element in the brand system.</p>
+
+      <h3>Color system</h3>
+      <p>The palette was built around a single reference image: a dark venue with stage lights cutting through. <strong>Background Black</strong> carries warmth — it has the feeling of wood and concrete, not pure digital darkness. <strong>Electric Purple</strong> is our primary action color and the classic venue wash. <strong>Neon Green</strong> is the unexpected accent, the light that catches a guitar neck. Each color has a defined role in the interface and they do not compete — purple leads, green accents, everything grounds in black.</p>
+
+      <h3>Applying branding to the interface</h3>
+      <p>We maintained a deliberate sequencing: functionality first, then style. For the majority of development, the app ran with minimal visual polish — gray boxes, default type, no logo. This was intentional. Getting the interactions right before layering on the brand meant we were not designing ourselves into corners. By week 10, with the core features stable, we began applying the brand system: accent colors to interactive elements, consistent typography treatment, and logo integration across the app's entry points.</p>
+
+      <p>The blog website you are reading right now is an extension of that same brand language — a dark, editorial aesthetic that carries the energy of a show poster into a digital format.</p>
     `,
   },
 ]
