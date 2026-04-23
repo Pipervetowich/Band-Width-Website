@@ -35,7 +35,7 @@ const team = [
     color: "#7B23CF",
     gradient: "linear-gradient(160deg, #1a0a2e 0%, #2d1050 100%)",
     accent: "#7B23CF",
-    bio: "Designed Figma prototype, user research, and all front-end screens.",
+    bio: "Designed Figma prototype, user research, and most front-end screens.",
     photo: "/Piper.jpg",
   },
   {
