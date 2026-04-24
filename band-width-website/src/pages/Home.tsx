@@ -66,7 +66,7 @@ export default function Home() {
         {/* ── VIDEO PANEL ─────────────────────── */}
         <div className={styles.videoPanel}>
           <video className={styles.videoFrame} autoPlay muted loop playsInline>
-            <source src="/App_Video.mp4" type="video/mp4" />
+            <source src="/App_Video1.mp4" type="video/mp4" />
           </video>
           <div className={styles.videoOverlay} />
         </div>
